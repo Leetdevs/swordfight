@@ -1,0 +1,266 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Swordfight.io</title>
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div id="gameUI">
+      <a href="./terms.html" target="_blank">
+        <div id="termsText">Terms of Service</div>
+      </a>
+
+      <a href="./policy.html" target="_blank">
+        <div id="policyText">Privacy Policy</div>
+      </a>
+
+      <div id="leaderboardHolder">
+        <img
+          id="leaderboardBannerImg"
+          src="./globalLeaderboardBanner.png"
+          draggable="false"
+        />
+        <div id="leaderboardNameText">Name</div>
+        <div id="leaderboardLevelText">Level</div>
+        <div id="leaderboardScoreText">Score</div>
+      </div>
+      <div id="statsBg">
+        <img id="statsBannerImg" src="./yourStatsImg.png" draggable="false" />
+        <div id="statsUsername">Name: none</div>
+        <div id="statsScore">Score: none</div>
+        <div id="statsLevel">Level: none</div>
+        <div id="healthStat">Health: 100</div>
+        <div id="characterLevel">Character: none</div>
+        <div id="statsMoreInfo1">Join our discord server for more info</div>
+        <div id="statsMoreInfo2">(click the discord button)</div>
+      </div>
+      <div id="accBackground">
+        <img id="loginImg" src="./loginImg.png" draggable="false" />
+        <img id="registerImg" src="./registerImg.png" draggable="false" />
+        <div id="accLogin"></div>
+        <div id="accRegister"></div>
+        <div id="loginField">
+          <div id="loginModeText">Please Login</div>
+          <div id="usernameText">Your Name</div>
+          <div id="passwordText">Your Password</div>
+          <input id="_usernameInput" type="text" placeholder="your name..." />
+          <input
+            id="_passwordInput"
+            type="password"
+            placeholder="your password..."
+          />
+          <img id="loginClick" src="./loginClick.png" />
+          <div id="welcomeBackText">~ Welcome Back ~</div>
+        </div>
+        <div id="registerField">
+          <div id="usernameText">Your Name</div>
+          <div id="passwordText">Your Password</div>
+          <div id="repeatPasswordText">Repeat Password</div>
+          <div id="loginModeText">Please Register</div>
+          <input id="usernameInput" type="text" placeholder="your name..." />
+          <input
+            id="passwordInput"
+            type="password"
+            placeholder="your password..."
+          />
+          <input
+            id="repeatPasswordInput"
+            type="password"
+            placeholder="repeat password..."
+          />
+          <img id="registerClick" src="./registerClick.png" />
+        </div>
+      </div>
+      <img id="statsLogo" src="./statsLogo.png" draggable="false" />
+      <img id="accountLogo" src="./accountLogo.png" draggable="false" />
+      <img
+        id="topLeaderboardLogo"
+        src="./topLeaderboardLogo.png"
+        draggable="false"
+      />
+      <div class="bg"></div>
+      <div class="gameText">SWORDFIGHT.IO</div>
+      <div class="inputbg">
+        <div id="welcomeText">You are not logged in!</div>
+        <div class="yourUsernameText">Your Name</div>
+        <div class="selectServerText">Select Server</div>
+
+        <select class="serverSelect">
+          <option value="EU Germany">EU Germany</option>
+        </select>
+
+        <button id="joinBtn" class="joinGameBtn">Join game</button>
+
+        <input
+          type="text"
+          class="nameInput"
+          placeholder="your username"
+          maxlength="8"
+        />
+
+        <a href="https://discord.com/invite/mvfEDGr2RZ" target="_blank">
+          <img class="discordLogo" src="./discordLogo.png" draggable="false" />
+        </a>
+        <img
+          id="settingsLogo"
+          class="settingsLogo"
+          src="./settingsLogo.png"
+          draggable="false"
+        />
+      </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+    <canvas id="minimap" width="175" height="175"></canvas>
+    <div id="leaderboard">
+      <img
+        src="./images/leaderboard/leaderboard.png"
+        height="377.5"
+        draggable="false"
+      />
+      <div class="leaderboardText" id="top1"></div>
+      <div class="leaderboardText" id="top2"></div>
+      <div class="leaderboardText" id="top3"></div>
+      <div class="leaderboardText" id="top4"></div>
+      <div class="leaderboardText" id="top5"></div>
+      <div class="leaderboardText" id="top6"></div>
+      <div class="leaderboardText" id="top7"></div>
+      <div class="leaderboardText" id="top8"></div>
+      <div class="leaderboardText" id="top9"></div>
+      <div class="leaderboardText" id="top10"></div>
+
+      <div class="leaderboardNum" id="num1"></div>
+      <div class="leaderboardNum" id="num2"></div>
+      <div class="leaderboardNum" id="num3"></div>
+      <div class="leaderboardNum" id="num4"></div>
+      <div class="leaderboardNum" id="num5"></div>
+      <div class="leaderboardNum" id="num6"></div>
+      <div class="leaderboardNum" id="num7"></div>
+      <div class="leaderboardNum" id="num8"></div>
+      <div class="leaderboardNum" id="num9"></div>
+      <div class="leaderboardNum" id="num10"></div>
+
+      <div class="leaderboardScore" id="score1"></div>
+      <div class="leaderboardScore" id="score2"></div>
+      <div class="leaderboardScore" id="score3"></div>
+      <div class="leaderboardScore" id="score4"></div>
+      <div class="leaderboardScore" id="score5"></div>
+      <div class="leaderboardScore" id="score6"></div>
+      <div class="leaderboardScore" id="score7"></div>
+      <div class="leaderboardScore" id="score8"></div>
+      <div class="leaderboardScore" id="score9"></div>
+      <div class="leaderboardScore" id="score10"></div>
+    </div>
+    <div id="slotHolder" class="slotHolder">
+      <div id="slot1" class="slot">
+        <img
+          id="swordimg"
+          class="itemSlot"
+          draggable="false"
+          src="./images/inv/inv_sword.png"
+        />
+      </div>
+      <div id="slot2" class="slot">
+        <img
+          id="hammerimg"
+          class="itemSlot"
+          draggable="false"
+          src="./images/inv/inv_hammer.png"
+        />
+      </div>
+      <div id="slot3" class="slot">
+        <img
+          id="pickaxeimg"
+          class="itemSlot"
+          draggable="false"
+          src="./images/inv/inv_pickaxe.png"
+        />
+      </div>
+      <div id="slot4" class="slot">
+        <img
+          id="foodimg"
+          class="itemSlotNotRotated"
+          draggable="false"
+          src="./images/inv/inv_food.png"
+        />
+      </div>
+      <div id="slot5" class="slot">
+        <img
+          id="trapimg"
+          class="itemSlotNotRotated"
+          draggable="false"
+          src="./images/inv/inv_spike.png"
+        />
+      </div>
+      <div id="slot6" class="slot">
+        <img
+          id="spikeimg"
+          class="itemSlotNotRotated"
+          draggable="false"
+          src="./images/inv/inv_trap.png"
+        />
+      </div>
+      <div id="slot7" class="slot">
+        <img
+          id="boosterimg"
+          class="itemSlotNotRotated"
+          draggable="false"
+          src="./images/inv/inv_booster.png"
+        />
+      </div>
+      <div id="slot8" class="slot">
+        <img
+          id="wallimg"
+          class="itemSlotNotRotated"
+          draggable="false"
+          src="./images/inv/inv_wall.png"
+        />
+      </div>
+    </div>
+    <div id="resourceCountHolder">
+      <div class="berryBg">
+        <div id="berryCount" class="infoText">0</div>
+        <img
+          class="imgInfoBush"
+          draggable="false"
+          src="./images/resources/bush.png"
+        />
+      </div>
+      <div class="woodBg">
+        <div id="woodCount" class="infoText">0</div>
+        <img
+          class="imgInfoTree"
+          draggable="false"
+          src="./images/resources/tree.png"
+        />
+      </div>
+      <div class="stoneBg">
+        <div id="stoneCount" class="infoText">0</div>
+        <img
+          class="imgInfo"
+          draggable="false"
+          src="./images/resources/stone.png"
+        />
+      </div>
+      <div class="goldBg">
+        <div id="goldCount" class="infoText">0</div>
+        <img
+          class="imgInfo"
+          draggable="false"
+          src="./images/resources/gold.png"
+        />
+      </div>
+    </div>
+    <div id="chatHolder">
+      <input
+        type="text"
+        class="chatInput"
+        placeholder="type something..."
+        maxlength="50"
+      />
+    </div>
+  </body>
+</html>
